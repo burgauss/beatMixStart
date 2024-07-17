@@ -11,11 +11,12 @@ const presetHandler = (request, index, newPressetArray = null) => {
                 return [200, presets[index]];
             } else if (request === 'PUT')
             {
-                return [200, newPressetArray[index]];
+                presets[index] = newPressetArray;
+                return [200, presets[index]];
             } else
             {
                 // Bad Request
-                return [400, ];
+                return [400];
             }
     } else
     {
