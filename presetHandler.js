@@ -2,22 +2,19 @@
 const presets = require('./presets');
 
 // Complete this function:
-const presetHandler = (request, index, newPressetArray = null) => {
-    if (index >= 0 || index < presets.lenght)
+const presetHandler = (request, index =0, newPressetArray = null) => {
+    if (index >= 0 && index < 16)
     {
     
-        if (request === 'GET')
-            {
-                return [200, presets[index]];
-            } else if (request === 'PUT')
-            {
-                presets[index] = newPressetArray;
-                return [200, presets[index]];
-            } else
-            {
-                // Bad Request
-                return [400];
-            }
+        if (request === 'GET') {
+            return [200, presets[index]];
+        } else if (request === 'PUT') {
+            presets[index] = newPressetArray;
+            return [200, presets[index]];
+        } else {
+            // Bad Request
+            return [400];
+        }
     } else
     {
         // invalid index

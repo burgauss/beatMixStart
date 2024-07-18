@@ -383,7 +383,7 @@ describe('Preset function - presetHandler.js file', () => {
   });
 
   // Remove the 'x' before 'describe' to run these tests when you want to attempt the bonus!
-  xdescribe('BONUS: getNeighborPads() function', () => {
+  describe('BONUS: getNeighborPads() function', () => {
 
     it('should exist and be a function', () => {
       getNeighborPads;
@@ -418,12 +418,12 @@ describe('Preset function - presetHandler.js file', () => {
 
     it('should only return two neighbors when called with a location in a corner of the grid', () => {
       let result = getNeighborPads(0, 0, 5);
-      expect(result).to.include.something.that.deep.equals([0, 1]);
       expect(result).to.include.something.that.deep.equals([1, 0]);
+      expect(result).to.include.something.that.deep.equals([0, 1]);
       expect(result.length).to.equal(2);
       result = getNeighborPads(4, 4, 5);
-      expect(result).to.include.something.that.deep.equals([3, 4]);
       expect(result).to.include.something.that.deep.equals([4, 3]);
+      expect(result).to.include.something.that.deep.equals([3, 4]);
       expect(result.length).to.equal(2);
     });
 
